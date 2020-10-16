@@ -57,6 +57,46 @@
                     </a>
                 </li>
             
+                <li class="menu-item">
+                    <a class=""
+                       href="/about"
+                    >
+                        ABOUT
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/stacy"
+                    >
+                        STACY
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/categories"
+                    >
+                        CATEGORIES
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/tags"
+                    >
+                        TAGS
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/links"
+                    >
+                        LINKS
+                    </a>
+                </li>
+            
         </ul>
 
         <div class="menu-bar">
@@ -75,6 +115,31 @@
                 <li class="drawer-menu-item">
                     <a class=""
                        href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/stacy">STACY</a>
+                </li>
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/links">LINKS</a>
                 </li>
             
         </ul>
@@ -105,6 +170,28 @@
         <i class="fa fa-calendar-o"></i> 2020-10-11 23:38:49
     </span>
     
+        <span class="article-categories article-meta-item">
+            <i class="fa fa-folder"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/categories/stacy/">stacy</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa fa-tags"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/tags/stacy/">stacy</a>
+                    </li>
+                
+            </ul>
+        </span>
     
     
         <span class="article-pv article-meta-item">
@@ -113,7 +200,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-        <i class="fa fa-book"></i> <span>0 Words</span>
+        <i class="fa fa-book"></i> <span>2 Words</span>
         </span>
     
     
@@ -126,7 +213,7 @@
         </div>
 
         <div class="article-content markdown-body">
-            
+            <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2>
         </div>
 
         <div class="article-nav">
@@ -146,41 +233,130 @@
         <div class="comment-container">
             <div class="comments-container">
     
-        
-    <div class="valine-container">
-        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-        <div id="vcomments"></div>
-        <script>
-            new Valine({
-                el: '#vcomments',
-                appId: '0QULerfRWENv573XJEPon5un-gzGzoHsz',
-                appKey: 'jweT5sq9dzLWgcncNRX7EWlP',
-                meta: ''.split(','),
-                avatar: 'wavatar',
-                enableQQ: true,
-                placeholder: '',
-                lang: 'en'.toLowerCase()
-            });
+        @require '../../common/variables.styl'
+@require '../../common/animated.styl'
+
+.valine-container {
+
+  #vcomments {
+
+    .vwrap {
+
+      border: 1px solid var(--third-text-color);
+
+      .vheader {
+
+        .vinput {
+
+          color: var(--normal-text-color);
+          border-color: var(--third-text-color);
+
+          &:focus {
+            border-bottom: 1px dashed var(--primary-color) !important;
+          }
+        }
+      }
 
 
-            // Valine 评论列表增加"作者"标识
-            const getValineDomTimer = setInterval(() => {
-                const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
-                if (vcards.length > 0) {
-                    for (let vcard of vcards) {
-                        const vnick = vcard.querySelector('.vhead .vnick');
-                        if (vnick.innerHTML.toLocaleLowerCase() === 'John Doe'.toLocaleLowerCase()) {
-                            vcard.classList.add('author');
-                        }
-                    }
-                    clearInterval(getValineDomTimer);
-                } else {
-                    clearInterval(getValineDomTimer);
-                }
-            }, 2000);
-        </script>
-    </div>
+      .vedit {
 
+        .veditor {
+          color: var(--normal-text-color);
+        }
+
+        .vctrl {
+
+          .vicon {
+
+            fill: var(--normal-text-color);
+
+            &.actived {
+              fill: var(--primary-color);
+            }
+          }
+        }
+
+      }
+
+      button.vsubmit {
+
+        background: transparent !important;
+        color: var(--normal-text-color) !important;
+        border: 1px solid var(--normal-text-color) !important;
+
+        &:hover {
+          color: var(--primary-color) !important;
+          border: 1px solid var(--primary-color) !important;
+        }
+      }
+
+
+    }
+
+
+    .vcount {
+      color: var(--normal-text-color);
+
+      .vnum {
+        color: var(--second-text-color);
+      }
+    }
+
+    .vcard {
+
+      // author
+
+      &.author {
+        .vnick {
+          font-weight: bold;
+
+          &::after {
+            font-weight: 500;
+            font-size: 12px;
+            content: '博主';
+            padding: 2px;
+            background: -webkit-linear-gradient(45deg, #e3565e, #ee854b, #f6c258, #90c68a, #5fb3b3, #6699cc, #c594c5);
+            background: linear-gradient(45deg, #e3565e, #ee854b, #f6c258, #90c68a, #5fb3b3, #6699cc, #c594c5);
+            color: #fff;
+            margin-left: 5px;
+            border-radius: 2px;
+          }
+        }
+      }
+
+      .vhead {
+
+        .vnick {
+          color: var(--primary-color);
+        }
+
+        .vsys {
+          color: var(--normal-text-color);
+          background: var(--fourth-text-color) !important;
+        }
+      }
+
+
+      .vcontent {
+        P {
+          color: var(--normal-text-color);
+        }
+      }
+
+      .vh {
+        border-bottom-color: var(--border-color);
+      }
+    }
+
+
+    .vcopy {
+      color: var(--third-text-color);
+    }
+
+  }
+
+
+}
 
     
 </div>
@@ -256,7 +432,7 @@
         
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">测试</span></a></li></ol>
     </div>
 </div>
         
