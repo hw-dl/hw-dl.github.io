@@ -3745,6 +3745,7 @@ input.search-input::-webkit-search-cancel-button {
   max-width: 100%;
   border: 1px solid var(--border-color);
 }
+
 .markdown-body > table {
   border-spacing: 0;
   border-collapse: collapse;
